@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit]
 
   # GET /users
   # GET /users.json
@@ -63,6 +64,13 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def authorize
+        if !current_user.has_role?(:admin)
+            flash[:alert] = "You are not authorized!"
+            redirect_to root_path
+          end
+    end
+
     def set_user
       @user = User.find(params[:id])
     end
