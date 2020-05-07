@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 2020_05_06_224655) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "lists", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.text "method"
