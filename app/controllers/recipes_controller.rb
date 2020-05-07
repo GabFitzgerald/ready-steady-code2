@@ -12,8 +12,8 @@ class RecipesController < ApplicationController
   # end
 
   def index
+    #change this so that only the recipes the user has ingredients for is shown
     @recipes = Recipe.all
-    
   end
 
   # GET /recipes/1
