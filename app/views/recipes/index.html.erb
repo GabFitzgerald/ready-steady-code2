@@ -3,13 +3,20 @@
 <h1>Your Available Recipes:</h1>
 <br>
     <% @recipes.each do |recipe| %> 
-      <h2><%= recipe.title %></h2>
-      <h3>For this recipe you will need:</h3>
-        <% recipe.ingredients.each do |ingredient| %>
-          <li><%= ingredient.name %></li>
-        <% end %>
-      <h3>Method</h3>
-      <p><%= recipe.method %></p>
+      
+      <%# if the ingredients in a given recipe are in the users ingredient list %>
+      <% if @user.ingredients == (recipe.ingredients & @user.ingredients) %>
+        <h2><%= recipe.title %></h2>
+        <h3>For this recipe you will need:</h3>
+          <% recipe.ingredients.each do |ingredient| %>
+            <li><%= ingredient.name %></li>
+          <% end %>
+        <h3>Method</h3>
+        <p><%= recipe.method %></p>
+      <% else %>
+        <p><%= "You do not have enough ingredients to make #{recipe.title}" %></p>
+      <% end %>
     <br>
     <% end %>
 <%= link_to 'New Recipe', new_recipe_path %>
+
