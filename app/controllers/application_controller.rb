@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
         if !current_user.user_name
             return edit_user_path(current_user)
         else  
-            return root_path
+            return ingredients_path
         end
     end
 end

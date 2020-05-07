@@ -67,7 +67,7 @@ class UsersController < ApplicationController
     def authorize
         if !current_user.has_role?(:admin)
             flash[:alert] = "You are not authorized!"
-            redirect_to root_path
+            redirect_to ingredients_path
           end
     end
 

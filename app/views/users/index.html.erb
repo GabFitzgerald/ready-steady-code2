@@ -5,12 +5,10 @@
 
 <table>
   <tbody> 
-      <% @users.each do |user| %>
         <tr>
             <td><%= link_to 'Log in', new_user_session_path %></td>
             <td><%= link_to 'Sign up', user_session_path %></td>
         </tr>
-      <% end %>
   </tbody>
 </table>
 
