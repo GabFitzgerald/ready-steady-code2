@@ -5,16 +5,19 @@ class RecipesController < ApplicationController
   # GET /recipes.json
 
   #function that decides which recipes the user can cook
-  # def user_recipies
-  #   if User.ingredients.name == Recipe.ingredients.name
-  #   end
-  #   return Recipe
-  # end
+  # 
 
   def index
     #change this so that only the recipes the user has ingredients for is shown
     @recipes = Recipe.all
+    @user = User.find(current_user.id)
   end
+
+  # def user_recipes
+  #   User.ingredients.each do
+      
+  #   end
+  # end
 
   # GET /recipes/1
   # GET /recipes/1.json
