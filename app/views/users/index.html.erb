@@ -1,18 +1,17 @@
-<p id="notice"><%= notice %></p>
 
+<section id="welcome">
 <h1>Welcome to the Recipie App!</h1>
 <h3>Please login or signup to continue</h3>
 
 <table>
   <tbody> 
-      <% @users.each do |user| %>
         <tr>
             <td><%= link_to 'Log in', new_user_session_path %></td>
             <td><%= link_to 'Sign up', user_session_path %></td>
         </tr>
-      <% end %>
   </tbody>
 </table>
+</section>
 
 <%# <table> %>
   <%# <thead> %>

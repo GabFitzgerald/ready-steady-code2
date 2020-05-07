@@ -13,3 +13,70 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+     min-height: 100vh;
+     background: url('baked-tart.jpg') no-repeat center;
+     background-size: cover;
+     color: black;
+     padding: 0;
+     margin: 0;   
+    }
+
+#username {
+    display: flex;
+    justify-content: left;
+    margin: 100px;
+    text-transform: uppercase;
+}
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    min-width: 90vw;
+    color: black;
+    text-transform: uppercase; 
+    display: block;
+        overflow: hidden;
+        /* position: relative;  */
+}
+.top-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        padding-top: 2%;
+        
+        position: absolute;
+        top: 10px;
+      }
+
+.avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 20px;    
+    width: 10;
+    height: 5;
+    }
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    min-width: 80vw;
+    overflow: hidden;
+    margin: 30px;
+    padding: 0px;
+}
+
+#lin {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+
+ 

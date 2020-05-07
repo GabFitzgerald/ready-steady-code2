@@ -13,8 +13,13 @@
 
   <div class="field">
     <%= form.label :user_name %>
-    <%= form.text_field :user_name %>
+    <%= form.text_field :user_name %>    
   </div>
+
+<div>
+  <%= form.label :photo %>
+  <%= form.file_field :photo, accept: 'image/png,image/webp,image/gif,image/jpeg' %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
