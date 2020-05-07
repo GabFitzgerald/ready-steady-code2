@@ -6,12 +6,15 @@
       
         <h2><%= recipe.title %></h2>
         <p><%= recipe.method %></p>
-        <ul>
-          
         
-        </ul>
               
     <% end %>
+    <ul>
+          <% @recipes.ingredients.each do |ingredient| %>
+            <li><%= ingredient.name %></li>
+          <% end %>
+        
+    </ul>
 
 
 <br>
