@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit]
 
   # GET /users
   # GET /users.json
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    @user = User.find(current_user.id)
   end
 
   # GET /users/1/edit
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to new_user_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -63,6 +64,13 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def authorize
+        if !current_user.has_role?(:admin)
+            flash[:alert] = "You are not authorized!"
+            redirect_to root_path
+          end
+    end
+
     def set_user
       @user = User.find(params[:id])
     end
