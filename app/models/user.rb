@@ -7,4 +7,6 @@ class User < ApplicationRecord
         
   has_many :users_ingredients
   has_many :ingredients, through: :users_ingredients
+
+  has_one_attached :photo
 end

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     
     def after_sign_in_path_for(resource)
         if !current_user.user_name
-            return edit_user_path(current_user)
+            return new_user_path(current_user)
         else  
             return ingredients_path
         end
