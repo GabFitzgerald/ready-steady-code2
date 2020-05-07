@@ -6,11 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(email: "test@test.com", password: "Test12")
+
+UsersIngredient.create(user_id: "1", ingredient_id: "1")
+UsersIngredient.create(user_id: "1", ingredient_id: "2")
+UsersIngredient.create(user_id: "1", ingredient_id: "3")
+UsersIngredient.create(user_id: "1", ingredient_id: "4")
+UsersIngredient.create(user_id: "1", ingredient_id: "5")
+
 Ingredient.create(name: "Pie Crust")
 Ingredient.create(name: "Apples")
 Ingredient.create(name: "Cinnamon")
 Ingredient.create(name: "Plain Flour")
 Ingredient.create(name: "Sugar")
+
+RecipesIngredient.create(recipe_id: "1", ingredient_id: "1")
+RecipesIngredient.create(recipe_id: "1", ingredient_id: "2")
+RecipesIngredient.create(recipe_id: "1", ingredient_id: "3")
+RecipesIngredient.create(recipe_id: "1", ingredient_id: "4")
+RecipesIngredient.create(recipe_id: "1", ingredient_id: "5")
 
 Recipe.create(title: "Apple Pie", method: "1. Preheat oven to 375 degrees. Lightly grease a 9-inch pie pan.
 2. Whisk together sugar, flour and cinnamon in a large bowl. Add apples and mix with a large spoon until apples are evenly coated.
