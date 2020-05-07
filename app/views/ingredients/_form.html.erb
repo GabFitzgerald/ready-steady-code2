@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
+  <%# Old Edit Form for Input %>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <%# <%= collection_select(:user, :ingredient_id, Ingredient.all, :id, :name) %> %>
+    <%# object, object_id, collection, form value1, form value2 %>
   </div>
 
   <div class="actions">
