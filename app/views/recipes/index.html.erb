@@ -1,22 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Recipes</h1>
+<h1>Your Available Recipes:</h1>
 
     <% @recipes.each do |recipe| %>
       
         <h2><%= recipe.title %></h2>
-        <p><%= recipe.method %></p>
-        
-              
-    <% end %>
-    <ul>
-          <% @recipes.ingredients.each do |ingredient| %>
+        <h3>For this recipe you will need:</h3>
+          <% recipe.ingredients.each do |ingredient| %>
             <li><%= ingredient.name %></li>
           <% end %>
-        
-    </ul>
+        <p><%= recipe.method %></p>
+        <ul>
+          
+    </ul> 
+    <br>
+    <% end %>
+    
 
 
-<br>
+
 
 <%= link_to 'New Recipe', new_recipe_path %>
