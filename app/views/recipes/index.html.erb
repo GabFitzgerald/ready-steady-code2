@@ -15,6 +15,8 @@
         <p><%= recipe.method %></p>
       <% else %>
         <p><%= "You do not have enough ingredients to make #{recipe.title}" %></p>
+        <p>However, here is the recipe anyway - incase you wanted to know</p>
+        <p><%= recipe.method %></p>
       <% end %>
     <br>
     <% end %>
