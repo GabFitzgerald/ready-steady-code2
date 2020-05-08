@@ -5,7 +5,7 @@
     <% @recipes.each do |recipe| %> 
       
       <%# if the ingredients in a given recipe are in the users ingredient list %>
-      <% if @user.ingredients == (recipe.ingredients & @user.ingredients) %>
+      <% if current_user.ingredients == (recipe.ingredients & current_user.ingredients) %>
         <h2><%= recipe.title %></h2>
         <h3>For this recipe you will need:</h3>
           <% recipe.ingredients.each do |ingredient| %>
@@ -15,8 +15,10 @@
         <p><%= recipe.method %></p>
       <% else %>
         <p><%= "You do not have enough ingredients to make #{recipe.title}" %></p>
+        <p>However, here is the recipe anyway - incase you wanted to know</p>
+        <p><%= recipe.method %></p>
       <% end %>
     <br>
     <% end %>
-<%= link_to 'New Recipe', new_recipe_path %>
+<%# <%= link_to 'New Recipe', new_recipe_path %> %>
 

@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   def index
     #change this so that only the recipes the user has ingredients for is shown
     @recipes = Recipe.all
-    @user = User.find(current_user.id)
+    # @user = User.find(current_user.id)
   end
 
   # GET /recipes/1
